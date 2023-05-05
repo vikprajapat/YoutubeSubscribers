@@ -13,6 +13,7 @@
   "license": "ISC",
   "dependencies": {
     "express": "4.17.1",
+    "gh-pages": "^5.0.0",
     "mocha": "6.1.1",
     "mongoose": "^5.10.15"
   },
