@@ -1,12 +1,13 @@
 const mongoose = require('mongoose');
 const Subscriber = require('./models/subscriberSchema');
 const data = require('./data');
-require("dotenv").config();
+const path = require("path")
+require('dotenv').config({ path: path.resolve(__dirname, '../.env') })
 
 // Connect to DATABASE
 
-const DATABASE_URL = "mongodb://0.0.0.0:27017/subscriber";
-mongoose.connect(DATABASE_URL, { useNewUrlParser: true, useUnifiedTopology: true });
+const dbUrl = process.env.DATABASE_URI;
+mongoose.connect(dbUrl, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true });
 const db = mongoose.connection
 db.on('error', (err) => console.log(err))
 db.once('open', () => console.log('Database created...'))
