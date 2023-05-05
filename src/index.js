@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const app = require('./app');
 require("dotenv").config()
 // Define port number as 3000
-port = 3000;
+port = process.env.port || 3000;
 
 mongoose.set("strictQuery", false)
 
