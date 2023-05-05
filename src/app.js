@@ -43,7 +43,7 @@ app.get("/subscribers/names", async (req, res, next) => {
                   {
                         name: 1,
 
-                        _id: 0
+                        _id: 1
                   });
             res.status(200).type('json').send(
                   //data will look good and readable by JSON.stringify
